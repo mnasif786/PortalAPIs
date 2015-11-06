@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AdviceModelStoreContainer" CdmEntityContainer="AdviceEntities">
+    <EntitySetMapping Name="Actions">
+      <EntityTypeMapping TypeName="AdviceModel.Action">
+        <MappingFragment StoreEntitySet="Action">
+          <ScalarProperty Name="ActionID" ColumnName="ActionID" />
+          <ScalarProperty Name="ActionTypeID" ColumnName="ActionTypeID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="NatureOfAdviceID" ColumnName="NatureOfAdviceID" />
+          <ScalarProperty Name="NatureOfAdviceOther" ColumnName="NatureOfAdviceOther" />
+          <ScalarProperty Name="IndemnityID" ColumnName="IndemnityID" />
+          <ScalarProperty Name="IndemnityReasonID" ColumnName="IndemnityReasonID" />
+          <ScalarProperty Name="IndemnityOther" ColumnName="IndemnityOther" />
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="AdviceGiven" ColumnName="AdviceGiven" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="CompletedDate" ColumnName="CompletedDate" />
+          <ScalarProperty Name="EditStartDate" ColumnName="EditStartDate" />
+          <ScalarProperty Name="EditCompletedDate" ColumnName="EditCompletedDate" />
+          <ScalarProperty Name="GeneralNotes" ColumnName="GeneralNotes" />
+          <ScalarProperty Name="InternalNotes" ColumnName="InternalNotes" />
+          <ScalarProperty Name="MeetingDate" ColumnName="MeetingDate" />
+          <ScalarProperty Name="MeetingTypeID" ColumnName="MeetingTypeID" />
+          <ScalarProperty Name="DocumentCount" ColumnName="DocumentCount" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="EmailSent" ColumnName="EmailSent" />
+          <ScalarProperty Name="ExchangeGUID" ColumnName="ExchangeGUID" />
+          <ScalarProperty Name="ResultingTaskId" ColumnName="ResultingTaskId" />
+          <ScalarProperty Name="LoggedOnBehalfOf" ColumnName="LoggedOnBehalfOf" />
+          <ScalarProperty Name="Outbound" ColumnName="Outbound" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="OutOfHours" ColumnName="OutOfHours" />
+          <ScalarProperty Name="ClientSatisfiedWithAdvice" ColumnName="ClientSatisfiedWithAdvice" />
+          <ScalarProperty Name="NumberOfEmployeesInvolved" ColumnName="NumberOfEmployeesInvolved" />
+          <ScalarProperty Name="IsKeyEvent" ColumnName="IsKeyEvent" />
+          <ScalarProperty Name="PolicyNumberID" ColumnName="PolicyNumberID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jobs">
+      <EntityTypeMapping TypeName="AdviceModel.Job">
+        <MappingFragment StoreEntitySet="Job">
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="AdviceCardID" ColumnName="AdviceCardID" />
+          <ScalarProperty Name="SiteAddressID" ColumnName="SiteAddressID" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="CurrentNatureOfAdviceID" ColumnName="CurrentNatureOfAdviceID" />
+          <ScalarProperty Name="LastActionDate" ColumnName="LastActionDate" />
+          <ScalarProperty Name="LastActionId" ColumnName="LastActionId" />
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="Closed" ColumnName="Closed" />
+          <ScalarProperty Name="IndemnityID" ColumnName="IndemnityID" />
+          <ScalarProperty Name="Sensitive" ColumnName="Sensitive" />
+          <ScalarProperty Name="Checklist" ColumnName="Checklist" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="LastModifyingAction" ColumnName="LastModifyingAction" />
+          <ScalarProperty Name="LastModifiedReason" ColumnName="LastModifiedReason" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="LastKeyNatureOfAdviceId" ColumnName="LastKeyNatureOfAdviceId" />
+          <ScalarProperty Name="PolicyNumberID" ColumnName="PolicyNumberID" />
+          <ScalarProperty Name="ProActiveCallBackCreated" ColumnName="ProActiveCallBackCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActionTypes">
+      <EntityTypeMapping TypeName="AdviceModel.ActionType">
+        <MappingFragment StoreEntitySet="ActionType">
+          <ScalarProperty Name="UserCanSetLogTimes" ColumnName="UserCanSetLogTimes" />
+          <ScalarProperty Name="Internal" ColumnName="Internal" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ShowNatureOfAdvice" ColumnName="ShowNatureOfAdvice" />
+          <ScalarProperty Name="ShowInternalNotes" ColumnName="ShowInternalNotes" />
+          <ScalarProperty Name="ShowAdviceGiven" ColumnName="ShowAdviceGiven" />
+          <ScalarProperty Name="ShowJobDetails" ColumnName="ShowJobDetails" />
+          <ScalarProperty Name="ShowContactInfo" ColumnName="ShowContactInfo" />
+          <ScalarProperty Name="ShowIndemnity" ColumnName="ShowIndemnity" />
+          <ScalarProperty Name="ShowGeneralNotes" ColumnName="ShowGeneralNotes" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ActionTypeID" ColumnName="ActionTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Code\PBS.WebAPIs\PBS.Client.API\..\Publish\UAT\ClientAPI</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>08/10/2015 10:15:35</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>08/10/2015 10:15:35</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Cors.dll">
+      <publishTime>08/06/2015 15:42:28</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>08/06/2015 15:42:28</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>08/06/2015 15:42:28</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>08/06/2015 15:42:28</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Jwt.dll">
+      <publishTime>08/06/2015 15:42:28</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>08/06/2015 15:42:28</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>08/06/2015 15:42:28</publishTime>
+    </File>
+    <File Include="bin/NLog.config">
+      <publishTime>08/18/2015 09:40:52</publishTime>
+    </File>
+    <File Include="bin/NLog.dll">
+      <publishTime>08/18/2015 09:40:52</publishTime>
+    </File>
+    <File Include="bin/NLog.Extensions.dll">
+      <publishTime>08/18/2015 09:40:52</publishTime>
+    </File>
+    <File Include="bin/NLog.Web.dll">
+      <publishTime>08/18/2015 09:40:52</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>08/06/2015 15:42:28</publishTime>
+    </File>
+    <File Include="bin/PBS.Claims.dll">
+      <publishTime>09/29/2015 10:36:33</publishTime>
+    </File>
+    <File Include="bin/PBS.Client.API.dll">
+      <publishTime>09/29/2015 10:36:36</publishTime>
+    </File>
+    <File Include="bin/PBS.Core.dll">
+      <publishTime>09/29/2015 10:36:33</publishTime>
+    </File>
+    <File Include="bin/PBS.Logging.dll">
+      <publishTime>08/21/2015 09:00:59</publishTime>
+    </File>
+    <File Include="bin/StructureMap.dll">
+      <publishTime>08/10/2015 10:44:07</publishTime>
+    </File>
+    <File Include="bin/StructureMap.Net4.dll">
+      <publishTime>08/10/2015 10:44:07</publishTime>
+    </File>
+    <File Include="bin/System.IdentityModel.Tokens.Jwt.dll">
+      <publishTime>08/06/2015 15:42:28</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>08/06/2015 15:42:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Cors.dll">
+      <publishTime>08/10/2015 14:42:04</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Cors.dll">
+      <publishTime>08/10/2015 14:43:43</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>08/06/2015 15:42:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Owin.dll">
+      <publishTime>08/06/2015 15:42:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>08/06/2015 15:42:28</publishTime>
+    </File>
+    <File Include="DataModel/ClientDataModel.edmx.diagram">
+      <publishTime>09/24/2015 11:25:37</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>09/23/2015 13:52:54</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>09/28/2015 15:51:20</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>09/29/2015 10:36:38</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

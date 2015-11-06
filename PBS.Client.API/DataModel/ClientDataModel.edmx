@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ClientModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TBLCustomers">
+          <Key>
+            <PropertyRef Name="CustomerKey" />
+          </Key>
+          <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerKey" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="300" />
+          <Property Name="Password" Type="varchar" MaxLength="200" />
+          <Property Name="CompanyRegistrationNumber" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="CompanyVATNumber" Type="varchar" MaxLength="15" />
+          <Property Name="NumberOfStaff" Type="int" />
+          <Property Name="Payroll" Type="money" />
+          <Property Name="BankName" Type="varchar" MaxLength="200" />
+          <Property Name="AccountNumber" Type="varchar" MaxLength="100" />
+          <Property Name="SortCode" Type="int" />
+          <Property Name="CompanyMainEmail" Type="varchar" MaxLength="1000" />
+          <Property Name="CompanyWebsite" Type="varchar" MaxLength="1000" />
+          <Property Name="DefaultLegalLocationID" Type="int" Nullable="false" />
+          <Property Name="CurrentSalesRepUserName" Type="varchar" MaxLength="30" />
+          <Property Name="CurrentHSConsultant" Type="varchar" MaxLength="30" />
+          <Property Name="CurrentPersonnelConsultant" Type="varchar" MaxLength="30" />
+          <Property Name="PrincipleBusinessTypeID" Type="int" />
+          <Property Name="CompanyNameAKA" Type="varchar" MaxLength="15" />
+          <Property Name="PBSIndustryTypeID" Type="int" />
+          <Property Name="CustomerGroupID" Type="int" />
+          <Property Name="DefaultPaymentMethodID" Type="int" Nullable="false" />
+          <Property Name="PrivateAndConfidential" Type="bit" />
+          <Property Name="AssociatedClientNotes" Type="varchar" MaxLength="2000" />
+          <Property Name="AssociatedClient" Type="varchar" MaxLength="20" />
+          <Property Name="OperaSalesLedger" Type="varchar" MaxLength="50" />
+          <Property Name="flagHidden" Type="bit" />
+          <Property Name="DummyAccount" Type="bit" />
+          <Property Name="ClientTypeID" Type="int" />
+          <Property Name="HighPriority" Type="bit" />
+          <Property Name="LeadSaleID" Type="int" />
+          <Property Name="SyncronisationStatus" Type="int" />
+          <Property Name="HoldAllAgreements" Type="bit" />
+          <Property Name="ServiceDeskID" Type="int" />
+          <Property Name="TradingAs" Type="varchar" MaxLength="100" />
+          <Property Name="IsVATRegistered" Type="bit" />
+          <Property Name="NumberOfERMUpdates" Type="int" />
+          <Property Name="SalesTeamID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ClientModelStoreContainer">
+          <EntitySet Name="TBLCustomers" EntityType="Self.TBLCustomers" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ClientModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TBLCustomer">
+          <Key>
+            <PropertyRef Name="CustomerKey" />
+          </Key>
+          <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerKey" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="CompanyName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyRegistrationNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CompanyVATNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="NumberOfStaff" Type="Int32" />
+          <Property Name="Payroll" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="BankName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="AccountNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SortCode" Type="Int32" />
+          <Property Name="CompanyMainEmail" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyWebsite" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="DefaultLegalLocationID" Type="Int32" Nullable="false" />
+          <Property Name="CurrentSalesRepUserName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CurrentHSConsultant" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CurrentPersonnelConsultant" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PrincipleBusinessTypeID" Type="Int32" />
+          <Property Name="CompanyNameAKA" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="PBSIndustryTypeID" Type="Int32" />
+          <Property Name="CustomerGroupID" Type="Int32" />
+          <Property Name="DefaultPaymentMethodID" Type="Int32" Nullable="false" />
+          <Property Name="PrivateAndConfidential" Type="Boolean" />
+          <Property Name="AssociatedClientNotes" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="AssociatedClient" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="OperaSalesLedger" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="flagHidden" Type="Boolean" />
+          <Property Name="DummyAccount" Type="Boolean" />
+          <Property Name="ClientTypeID" Type="Int32" />
+          <Property Name="HighPriority" Type="Boolean" />
+          <Property Name="LeadSaleID" Type="Int32" />
+          <Property Name="SyncronisationStatus" Type="Int32" />
+          <Property Name="HoldAllAgreements" Type="Boolean" />
+          <Property Name="ServiceDeskID" Type="Int32" />
+          <Property Name="TradingAs" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IsVATRegistered" Type="Boolean" />
+          <Property Name="NumberOfERMUpdates" Type="Int32" />
+          <Property Name="SalesTeamID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ClientEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TBLCustomers" EntityType="Self.TBLCustomer" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ClientModelStoreContainer" CdmEntityContainer="ClientEntities">
+          <EntitySetMapping Name="TBLCustomers">
+            <EntityTypeMapping TypeName="ClientModel.TBLCustomer">
+              <MappingFragment StoreEntitySet="TBLCustomers">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="CustomerKey" ColumnName="CustomerKey" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CompanyRegistrationNumber" ColumnName="CompanyRegistrationNumber" />
+                <ScalarProperty Name="CompanyVATNumber" ColumnName="CompanyVATNumber" />
+                <ScalarProperty Name="NumberOfStaff" ColumnName="NumberOfStaff" />
+                <ScalarProperty Name="Payroll" ColumnName="Payroll" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+                <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+                <ScalarProperty Name="CompanyMainEmail" ColumnName="CompanyMainEmail" />
+                <ScalarProperty Name="CompanyWebsite" ColumnName="CompanyWebsite" />
+                <ScalarProperty Name="DefaultLegalLocationID" ColumnName="DefaultLegalLocationID" />
+                <ScalarProperty Name="CurrentSalesRepUserName" ColumnName="CurrentSalesRepUserName" />
+                <ScalarProperty Name="CurrentHSConsultant" ColumnName="CurrentHSConsultant" />
+                <ScalarProperty Name="CurrentPersonnelConsultant" ColumnName="CurrentPersonnelConsultant" />
+                <ScalarProperty Name="PrincipleBusinessTypeID" ColumnName="PrincipleBusinessTypeID" />
+                <ScalarProperty Name="CompanyNameAKA" ColumnName="CompanyNameAKA" />
+                <ScalarProperty Name="PBSIndustryTypeID" ColumnName="PBSIndustryTypeID" />
+                <ScalarProperty Name="CustomerGroupID" ColumnName="CustomerGroupID" />
+                <ScalarProperty Name="DefaultPaymentMethodID" ColumnName="DefaultPaymentMethodID" />
+                <ScalarProperty Name="PrivateAndConfidential" ColumnName="PrivateAndConfidential" />
+                <ScalarProperty Name="AssociatedClientNotes" ColumnName="AssociatedClientNotes" />
+                <ScalarProperty Name="AssociatedClient" ColumnName="AssociatedClient" />
+                <ScalarProperty Name="OperaSalesLedger" ColumnName="OperaSalesLedger" />
+                <ScalarProperty Name="flagHidden" ColumnName="flagHidden" />
+                <ScalarProperty Name="DummyAccount" ColumnName="DummyAccount" />
+                <ScalarProperty Name="ClientTypeID" ColumnName="ClientTypeID" />
+                <ScalarProperty Name="HighPriority" ColumnName="HighPriority" />
+                <ScalarProperty Name="LeadSaleID" ColumnName="LeadSaleID" />
+                <ScalarProperty Name="SyncronisationStatus" ColumnName="SyncronisationStatus" />
+                <ScalarProperty Name="HoldAllAgreements" ColumnName="HoldAllAgreements" />
+                <ScalarProperty Name="ServiceDeskID" ColumnName="ServiceDeskID" />
+                <ScalarProperty Name="TradingAs" ColumnName="TradingAs" />
+                <ScalarProperty Name="IsVATRegistered" ColumnName="IsVATRegistered" />
+                <ScalarProperty Name="NumberOfERMUpdates" ColumnName="NumberOfERMUpdates" />
+                <ScalarProperty Name="SalesTeamID" ColumnName="SalesTeamID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

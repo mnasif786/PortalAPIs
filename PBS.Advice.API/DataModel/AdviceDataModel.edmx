@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AdviceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Action">
+          <Key>
+            <PropertyRef Name="ActionID" />
+          </Key>
+          <Property Name="ActionID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ActionTypeID" Type="bigint" Nullable="false" />
+          <Property Name="JobID" Type="bigint" Nullable="false" />
+          <Property Name="NatureOfAdviceID" Type="bigint" />
+          <Property Name="NatureOfAdviceOther" Type="varchar" MaxLength="50" />
+          <Property Name="IndemnityID" Type="bigint" />
+          <Property Name="IndemnityReasonID" Type="bigint" />
+          <Property Name="IndemnityOther" Type="varchar" MaxLength="150" />
+          <Property Name="ContactID" Type="bigint" />
+          <Property Name="AdviceGiven" Type="varchar(max)" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="CompletedDate" Type="datetime" />
+          <Property Name="EditStartDate" Type="datetime" />
+          <Property Name="EditCompletedDate" Type="datetime" />
+          <Property Name="GeneralNotes" Type="varchar(max)" />
+          <Property Name="InternalNotes" Type="varchar(max)" />
+          <Property Name="MeetingDate" Type="datetime" />
+          <Property Name="MeetingTypeID" Type="bigint" />
+          <Property Name="DocumentCount" Type="bigint" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="50" />
+          <Property Name="EmailSent" Type="bit" />
+          <Property Name="ExchangeGUID" Type="varchar" MaxLength="50" />
+          <Property Name="ResultingTaskId" Type="bigint" />
+          <Property Name="LoggedOnBehalfOf" Type="varchar" MaxLength="50" />
+          <Property Name="Outbound" Type="bit" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedBy" Type="varchar" MaxLength="50" />
+          <Property Name="DeletedDate" Type="datetime" />
+          <Property Name="OutOfHours" Type="bit" />
+          <Property Name="ClientSatisfiedWithAdvice" Type="bit" />
+          <Property Name="NumberOfEmployeesInvolved" Type="int" />
+          <Property Name="IsKeyEvent" Type="bit" />
+          <Property Name="PolicyNumberID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="ActionType">
+          <Key>
+            <PropertyRef Name="ActionTypeID" />
+          </Key>
+          <Property Name="ActionTypeID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ShowGeneralNotes" Type="bit" Nullable="false" />
+          <Property Name="ShowIndemnity" Type="bit" Nullable="false" />
+          <Property Name="ShowContactInfo" Type="bit" Nullable="false" />
+          <Property Name="ShowJobDetails" Type="bit" Nullable="false" />
+          <Property Name="ShowAdviceGiven" Type="bit" Nullable="false" />
+          <Property Name="ShowInternalNotes" Type="bit" Nullable="false" />
+          <Property Name="ShowNatureOfAdvice" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedBy" Type="varchar" MaxLength="50" />
+          <Property Name="DeletedDate" Type="datetime" />
+          <Property Name="Internal" Type="bit" Nullable="false" />
+          <Property Name="UserCanSetLogTimes" Type="bit" />
+        </EntityType>
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="JobID" />
+          </Key>
+          <Property Name="JobID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartmentID" Type="bigint" />
+          <Property Name="ClientID" Type="int" Nullable="false" />
+          <Property Name="AdviceCardID" Type="bigint" />
+          <Property Name="SiteAddressID" Type="bigint" />
+          <Property Name="Subject" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="CurrentNatureOfAdviceID" Type="bigint" />
+          <Property Name="LastActionDate" Type="datetime" />
+          <Property Name="LastActionId" Type="bigint" />
+          <Property Name="ContactID" Type="bigint" />
+          <Property Name="Closed" Type="bit" Nullable="false" />
+          <Property Name="IndemnityID" Type="bigint" />
+          <Property Name="Sensitive" Type="bit" Nullable="false" />
+          <Property Name="Checklist" Type="varchar" MaxLength="250" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModifyingAction" Type="varchar" MaxLength="10" />
+          <Property Name="LastModifiedReason" Type="varchar" MaxLength="100" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedBy" Type="varchar" MaxLength="50" />
+          <Property Name="DeletedDate" Type="datetime" />
+          <Property Name="LastKeyNatureOfAdviceId" Type="bigint" />
+          <Property Name="PolicyNumberID" Type="bigint" />
+          <Property Name="ProActiveCallBackCreated" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Action_ActionType">
+          <End Role="ActionType" Type="Self.ActionType" Multiplicity="1" />
+          <End Role="Action" Type="Self.Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActionType">
+              <PropertyRef Name="ActionTypeID" />
+            </Principal>
+            <Dependent Role="Action">
+              <PropertyRef Name="ActionTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AdviceModelStoreContainer">
+          <EntitySet Name="Action" EntityType="Self.Action" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ActionType" EntityType="Self.ActionType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Job" EntityType="Self.Job" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Action_ActionType" Association="Self.FK_Action_ActionType">
+            <End Role="ActionType" EntitySet="ActionType" />
+            <End Role="Action" EntitySet="Action" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AdviceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Action">
+          <Key>
+            <PropertyRef Name="ActionID" />
+          </Key>
+          <Property Name="ActionID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ActionTypeID" Type="Int64" Nullable="false" />
+          <Property Name="JobID" Type="Int64" Nullable="false" />
+          <Property Name="NatureOfAdviceID" Type="Int64" />
+          <Property Name="NatureOfAdviceOther" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IndemnityID" Type="Int64" />
+          <Property Name="IndemnityReasonID" Type="Int64" />
+          <Property Name="IndemnityOther" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ContactID" Type="Int64" />
+          <Property Name="AdviceGiven" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="CompletedDate" Type="DateTime" Precision="3" />
+          <Property Name="EditStartDate" Type="DateTime" Precision="3" />
+          <Property Name="EditCompletedDate" Type="DateTime" Precision="3" />
+          <Property Name="GeneralNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="InternalNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MeetingDate" Type="DateTime" Precision="3" />
+          <Property Name="MeetingTypeID" Type="Int64" />
+          <Property Name="DocumentCount" Type="Int64" />
+          <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmailSent" Type="Boolean" />
+          <Property Name="ExchangeGUID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ResultingTaskId" Type="Int64" />
+          <Property Name="LoggedOnBehalfOf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Outbound" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+          <Property Name="OutOfHours" Type="Boolean" />
+          <Property Name="ClientSatisfiedWithAdvice" Type="Boolean" />
+          <Property Name="NumberOfEmployeesInvolved" Type="Int32" />
+          <Property Name="IsKeyEvent" Type="Boolean" />
+          <Property Name="PolicyNumberID" Type="Int64" />
+          <NavigationProperty Name="Job" Relationship="AdviceModel.JobAction" FromRole="Action" ToRole="Job" />
+          <NavigationProperty Name="ActionType" Relationship="AdviceModel.FK_Action_ActionType" FromRole="Action" ToRole="ActionType" />
+        </EntityType>
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="JobID" />
+          </Key>
+          <Property Name="JobID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentID" Type="Int64" />
+          <Property Name="ClientID" Type="Int32" Nullable="false" />
+          <Property Name="AdviceCardID" Type="Int64" />
+          <Property Name="SiteAddressID" Type="Int64" />
+          <Property Name="Subject" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CurrentNatureOfAdviceID" Type="Int64" />
+          <Property Name="LastActionDate" Type="DateTime" Precision="3" />
+          <Property Name="LastActionId" Type="Int64" />
+          <Property Name="ContactID" Type="Int64" />
+          <Property Name="Closed" Type="Boolean" Nullable="false" />
+          <Property Name="IndemnityID" Type="Int64" />
+          <Property Name="Sensitive" Type="Boolean" Nullable="false" />
+          <Property Name="Checklist" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastModifyingAction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LastModifiedReason" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastKeyNatureOfAdviceId" Type="Int64" />
+          <Property Name="PolicyNumberID" Type="Int64" />
+          <Property Name="ProActiveCallBackCreated" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Actions" Relationship="AdviceModel.JobAction" FromRole="Job" ToRole="Action" />
+        </EntityType>
+        <EntityContainer Name="AdviceEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Actions" EntityType="Self.Action" />
+          <EntitySet Name="Jobs" EntityType="Self.Job" />
+          <AssociationSet Name="JobAction" Association="AdviceModel.JobAction">
+            <End Role="Job" EntitySet="Jobs" />
+            <End Role="Action" EntitySet="Actions" />
+          </AssociationSet>
+          <EntitySet Name="ActionTypes" EntityType="AdviceModel.ActionType" />
+          <AssociationSet Name="FK_Action_ActionType" Association="AdviceModel.FK_Action_ActionType">
+            <End Role="ActionType" EntitySet="ActionTypes" />
+            <End Role="Action" EntitySet="Actions" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="JobAction">
+          <End Type="AdviceModel.Job" Role="Job" Multiplicity="1" />
+          <End Type="AdviceModel.Action" Role="Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="JobID" />
+            </Principal>
+            <Dependent Role="Action">
+              <PropertyRef Name="JobID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ActionType">
+          <Key>
+            <PropertyRef Name="ActionTypeID" />
+          </Key>
+          <Property Name="ActionTypeID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ShowGeneralNotes" Type="Boolean" Nullable="false" />
+          <Property Name="ShowIndemnity" Type="Boolean" Nullable="false" />
+          <Property Name="ShowContactInfo" Type="Boolean" Nullable="false" />
+          <Property Name="ShowJobDetails" Type="Boolean" Nullable="false" />
+          <Property Name="ShowAdviceGiven" Type="Boolean" Nullable="false" />
+          <Property Name="ShowInternalNotes" Type="Boolean" Nullable="false" />
+          <Property Name="ShowNatureOfAdvice" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+          <Property Name="Internal" Type="Boolean" Nullable="false" />
+          <Property Name="UserCanSetLogTimes" Type="Boolean" />
+        </EntityType>
+        <Association Name="FK_Action_ActionType">
+          <End Type="AdviceModel.ActionType" Role="ActionType" Multiplicity="1" />
+          <End Type="AdviceModel.Action" Role="Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActionType">
+              <PropertyRef Name="ActionTypeID" />
+            </Principal>
+            <Dependent Role="Action">
+              <PropertyRef Name="ActionTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AdviceModelStoreContainer" CdmEntityContainer="AdviceEntities">
+          <EntitySetMapping Name="Actions">
+            <EntityTypeMapping TypeName="AdviceModel.Action">
+              <MappingFragment StoreEntitySet="Action">
+                <ScalarProperty Name="ActionID" ColumnName="ActionID" />
+                <ScalarProperty Name="ActionTypeID" ColumnName="ActionTypeID" />
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+                <ScalarProperty Name="NatureOfAdviceID" ColumnName="NatureOfAdviceID" />
+                <ScalarProperty Name="NatureOfAdviceOther" ColumnName="NatureOfAdviceOther" />
+                <ScalarProperty Name="IndemnityID" ColumnName="IndemnityID" />
+                <ScalarProperty Name="IndemnityReasonID" ColumnName="IndemnityReasonID" />
+                <ScalarProperty Name="IndemnityOther" ColumnName="IndemnityOther" />
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+                <ScalarProperty Name="AdviceGiven" ColumnName="AdviceGiven" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="CompletedDate" ColumnName="CompletedDate" />
+                <ScalarProperty Name="EditStartDate" ColumnName="EditStartDate" />
+                <ScalarProperty Name="EditCompletedDate" ColumnName="EditCompletedDate" />
+                <ScalarProperty Name="GeneralNotes" ColumnName="GeneralNotes" />
+                <ScalarProperty Name="InternalNotes" ColumnName="InternalNotes" />
+                <ScalarProperty Name="MeetingDate" ColumnName="MeetingDate" />
+                <ScalarProperty Name="MeetingTypeID" ColumnName="MeetingTypeID" />
+                <ScalarProperty Name="DocumentCount" ColumnName="DocumentCount" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="EmailSent" ColumnName="EmailSent" />
+                <ScalarProperty Name="ExchangeGUID" ColumnName="ExchangeGUID" />
+                <ScalarProperty Name="ResultingTaskId" ColumnName="ResultingTaskId" />
+                <ScalarProperty Name="LoggedOnBehalfOf" ColumnName="LoggedOnBehalfOf" />
+                <ScalarProperty Name="Outbound" ColumnName="Outbound" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="OutOfHours" ColumnName="OutOfHours" />
+                <ScalarProperty Name="ClientSatisfiedWithAdvice" ColumnName="ClientSatisfiedWithAdvice" />
+                <ScalarProperty Name="NumberOfEmployeesInvolved" ColumnName="NumberOfEmployeesInvolved" />
+                <ScalarProperty Name="IsKeyEvent" ColumnName="IsKeyEvent" />
+                <ScalarProperty Name="PolicyNumberID" ColumnName="PolicyNumberID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Jobs">
+            <EntityTypeMapping TypeName="AdviceModel.Job">
+              <MappingFragment StoreEntitySet="Job">
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+                <ScalarProperty Name="AdviceCardID" ColumnName="AdviceCardID" />
+                <ScalarProperty Name="SiteAddressID" ColumnName="SiteAddressID" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="CurrentNatureOfAdviceID" ColumnName="CurrentNatureOfAdviceID" />
+                <ScalarProperty Name="LastActionDate" ColumnName="LastActionDate" />
+                <ScalarProperty Name="LastActionId" ColumnName="LastActionId" />
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+                <ScalarProperty Name="Closed" ColumnName="Closed" />
+                <ScalarProperty Name="IndemnityID" ColumnName="IndemnityID" />
+                <ScalarProperty Name="Sensitive" ColumnName="Sensitive" />
+                <ScalarProperty Name="Checklist" ColumnName="Checklist" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifyingAction" ColumnName="LastModifyingAction" />
+                <ScalarProperty Name="LastModifiedReason" ColumnName="LastModifiedReason" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="LastKeyNatureOfAdviceId" ColumnName="LastKeyNatureOfAdviceId" />
+                <ScalarProperty Name="PolicyNumberID" ColumnName="PolicyNumberID" />
+                <ScalarProperty Name="ProActiveCallBackCreated" ColumnName="ProActiveCallBackCreated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActionTypes">
+            <EntityTypeMapping TypeName="AdviceModel.ActionType">
+              <MappingFragment StoreEntitySet="ActionType">
+                <ScalarProperty Name="UserCanSetLogTimes" ColumnName="UserCanSetLogTimes" />
+                <ScalarProperty Name="Internal" ColumnName="Internal" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ShowNatureOfAdvice" ColumnName="ShowNatureOfAdvice" />
+                <ScalarProperty Name="ShowInternalNotes" ColumnName="ShowInternalNotes" />
+                <ScalarProperty Name="ShowAdviceGiven" ColumnName="ShowAdviceGiven" />
+                <ScalarProperty Name="ShowJobDetails" ColumnName="ShowJobDetails" />
+                <ScalarProperty Name="ShowContactInfo" ColumnName="ShowContactInfo" />
+                <ScalarProperty Name="ShowIndemnity" ColumnName="ShowIndemnity" />
+                <ScalarProperty Name="ShowGeneralNotes" ColumnName="ShowGeneralNotes" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ActionTypeID" ColumnName="ActionTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

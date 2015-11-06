@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ClientModelStoreContainer" CdmEntityContainer="ClientEntities">
+    <EntitySetMapping Name="TBLCustomers">
+      <EntityTypeMapping TypeName="ClientModel.TBLCustomer">
+        <MappingFragment StoreEntitySet="TBLCustomers">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerKey" ColumnName="CustomerKey" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CompanyRegistrationNumber" ColumnName="CompanyRegistrationNumber" />
+          <ScalarProperty Name="CompanyVATNumber" ColumnName="CompanyVATNumber" />
+          <ScalarProperty Name="NumberOfStaff" ColumnName="NumberOfStaff" />
+          <ScalarProperty Name="Payroll" ColumnName="Payroll" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="CompanyMainEmail" ColumnName="CompanyMainEmail" />
+          <ScalarProperty Name="CompanyWebsite" ColumnName="CompanyWebsite" />
+          <ScalarProperty Name="DefaultLegalLocationID" ColumnName="DefaultLegalLocationID" />
+          <ScalarProperty Name="CurrentSalesRepUserName" ColumnName="CurrentSalesRepUserName" />
+          <ScalarProperty Name="CurrentHSConsultant" ColumnName="CurrentHSConsultant" />
+          <ScalarProperty Name="CurrentPersonnelConsultant" ColumnName="CurrentPersonnelConsultant" />
+          <ScalarProperty Name="PrincipleBusinessTypeID" ColumnName="PrincipleBusinessTypeID" />
+          <ScalarProperty Name="CompanyNameAKA" ColumnName="CompanyNameAKA" />
+          <ScalarProperty Name="PBSIndustryTypeID" ColumnName="PBSIndustryTypeID" />
+          <ScalarProperty Name="CustomerGroupID" ColumnName="CustomerGroupID" />
+          <ScalarProperty Name="DefaultPaymentMethodID" ColumnName="DefaultPaymentMethodID" />
+          <ScalarProperty Name="PrivateAndConfidential" ColumnName="PrivateAndConfidential" />
+          <ScalarProperty Name="AssociatedClientNotes" ColumnName="AssociatedClientNotes" />
+          <ScalarProperty Name="AssociatedClient" ColumnName="AssociatedClient" />
+          <ScalarProperty Name="OperaSalesLedger" ColumnName="OperaSalesLedger" />
+          <ScalarProperty Name="flagHidden" ColumnName="flagHidden" />
+          <ScalarProperty Name="DummyAccount" ColumnName="DummyAccount" />
+          <ScalarProperty Name="ClientTypeID" ColumnName="ClientTypeID" />
+          <ScalarProperty Name="HighPriority" ColumnName="HighPriority" />
+          <ScalarProperty Name="LeadSaleID" ColumnName="LeadSaleID" />
+          <ScalarProperty Name="SyncronisationStatus" ColumnName="SyncronisationStatus" />
+          <ScalarProperty Name="HoldAllAgreements" ColumnName="HoldAllAgreements" />
+          <ScalarProperty Name="ServiceDeskID" ColumnName="ServiceDeskID" />
+          <ScalarProperty Name="TradingAs" ColumnName="TradingAs" />
+          <ScalarProperty Name="IsVATRegistered" ColumnName="IsVATRegistered" />
+          <ScalarProperty Name="NumberOfERMUpdates" ColumnName="NumberOfERMUpdates" />
+          <ScalarProperty Name="SalesTeamID" ColumnName="SalesTeamID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

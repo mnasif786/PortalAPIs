@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Peninsula.SharePoint.Common.Library" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Peninsula.SharePoint.Common.Library" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Document" nillable="true" type="tns:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDocument" nillable="true" type="tns:ArrayOfDocument" />
+  <xs:complexType name="Document">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Caveats" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DocumentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Extension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Document" nillable="true" type="tns:Document" />
+  <xs:complexType name="DocumentWithContent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Document" nillable="true" type="tns:Document" />
+      <xs:element minOccurs="0" name="FBytes" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DocumentWithContent" nillable="true" type="tns:DocumentWithContent" />
+  <xs:complexType name="ArrayOfInstallationReceipt">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InstallationReceipt" nillable="true" type="tns:InstallationReceipt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInstallationReceipt" nillable="true" type="tns:ArrayOfInstallationReceipt" />
+  <xs:complexType name="InstallationReceipt">
+    <xs:sequence>
+      <xs:element name="_x003C_Caveats_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ClientApproval_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ClientDocIds_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ClientDocVersions_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_CreatedBy_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Created_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_CustomerId_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_DocTitles_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Document_x003E_k__BackingField" nillable="true" type="tns:ArrayOfDocument" />
+      <xs:element name="_x003C_Editor_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_HrOnlineUser_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_InstallationReceiptAttachment_x003E_k__BackingField" nillable="true" type="tns:InstallationReceiptAttachment" />
+      <xs:element name="_x003C_Modified_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ReceiptsId_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_RejectComments_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Tcs_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InstallationReceipt" nillable="true" type="tns:InstallationReceipt" />
+  <xs:complexType name="InstallationReceiptAttachment">
+    <xs:sequence>
+      <xs:element name="_x003C_AttachmentName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_AttachmentUrl_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InstallationReceiptAttachment" nillable="true" type="tns:InstallationReceiptAttachment" />
+  <xs:complexType name="ArrayOfStationaryDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StationaryDocument" nillable="true" type="tns:StationaryDocument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStationaryDocument" nillable="true" type="tns:ArrayOfStationaryDocument" />
+  <xs:complexType name="StationaryDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Extension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StationaryDocument" nillable="true" type="tns:StationaryDocument" />
+  <xs:complexType name="StationaryDocumentWithContent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Document" nillable="true" type="tns:StationaryDocument" />
+      <xs:element minOccurs="0" name="FBytes" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StationaryDocumentWithContent" nillable="true" type="tns:StationaryDocumentWithContent" />
+</xs:schema>

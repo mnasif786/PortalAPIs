@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ClientModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TBLCustomer">
+    <Key>
+      <PropertyRef Name="CustomerKey" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerKey" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="CompanyName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyRegistrationNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompanyVATNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="NumberOfStaff" Type="Int32" />
+    <Property Name="Payroll" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BankName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AccountNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SortCode" Type="Int32" />
+    <Property Name="CompanyMainEmail" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyWebsite" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="DefaultLegalLocationID" Type="Int32" Nullable="false" />
+    <Property Name="CurrentSalesRepUserName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CurrentHSConsultant" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CurrentPersonnelConsultant" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PrincipleBusinessTypeID" Type="Int32" />
+    <Property Name="CompanyNameAKA" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PBSIndustryTypeID" Type="Int32" />
+    <Property Name="CustomerGroupID" Type="Int32" />
+    <Property Name="DefaultPaymentMethodID" Type="Int32" Nullable="false" />
+    <Property Name="PrivateAndConfidential" Type="Boolean" />
+    <Property Name="AssociatedClientNotes" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="AssociatedClient" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="OperaSalesLedger" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="flagHidden" Type="Boolean" />
+    <Property Name="DummyAccount" Type="Boolean" />
+    <Property Name="ClientTypeID" Type="Int32" />
+    <Property Name="HighPriority" Type="Boolean" />
+    <Property Name="LeadSaleID" Type="Int32" />
+    <Property Name="SyncronisationStatus" Type="Int32" />
+    <Property Name="HoldAllAgreements" Type="Boolean" />
+    <Property Name="ServiceDeskID" Type="Int32" />
+    <Property Name="TradingAs" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsVATRegistered" Type="Boolean" />
+    <Property Name="NumberOfERMUpdates" Type="Int32" />
+    <Property Name="SalesTeamID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ClientEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TBLCustomers" EntityType="Self.TBLCustomer" />
+  </EntityContainer>
+</Schema>

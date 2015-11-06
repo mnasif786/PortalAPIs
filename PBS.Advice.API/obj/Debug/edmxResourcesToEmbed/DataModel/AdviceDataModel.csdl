@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AdviceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Action">
+    <Key>
+      <PropertyRef Name="ActionID" />
+    </Key>
+    <Property Name="ActionID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ActionTypeID" Type="Int64" Nullable="false" />
+    <Property Name="JobID" Type="Int64" Nullable="false" />
+    <Property Name="NatureOfAdviceID" Type="Int64" />
+    <Property Name="NatureOfAdviceOther" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IndemnityID" Type="Int64" />
+    <Property Name="IndemnityReasonID" Type="Int64" />
+    <Property Name="IndemnityOther" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="ContactID" Type="Int64" />
+    <Property Name="AdviceGiven" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="CompletedDate" Type="DateTime" Precision="3" />
+    <Property Name="EditStartDate" Type="DateTime" Precision="3" />
+    <Property Name="EditCompletedDate" Type="DateTime" Precision="3" />
+    <Property Name="GeneralNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="InternalNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MeetingDate" Type="DateTime" Precision="3" />
+    <Property Name="MeetingTypeID" Type="Int64" />
+    <Property Name="DocumentCount" Type="Int64" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmailSent" Type="Boolean" />
+    <Property Name="ExchangeGUID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ResultingTaskId" Type="Int64" />
+    <Property Name="LoggedOnBehalfOf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Outbound" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <Property Name="OutOfHours" Type="Boolean" />
+    <Property Name="ClientSatisfiedWithAdvice" Type="Boolean" />
+    <Property Name="NumberOfEmployeesInvolved" Type="Int32" />
+    <Property Name="IsKeyEvent" Type="Boolean" />
+    <Property Name="PolicyNumberID" Type="Int64" />
+    <NavigationProperty Name="Job" Relationship="AdviceModel.JobAction" FromRole="Action" ToRole="Job" />
+    <NavigationProperty Name="ActionType" Relationship="AdviceModel.FK_Action_ActionType" FromRole="Action" ToRole="ActionType" />
+  </EntityType>
+  <EntityType Name="Job">
+    <Key>
+      <PropertyRef Name="JobID" />
+    </Key>
+    <Property Name="JobID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentID" Type="Int64" />
+    <Property Name="ClientID" Type="Int32" Nullable="false" />
+    <Property Name="AdviceCardID" Type="Int64" />
+    <Property Name="SiteAddressID" Type="Int64" />
+    <Property Name="Subject" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CurrentNatureOfAdviceID" Type="Int64" />
+    <Property Name="LastActionDate" Type="DateTime" Precision="3" />
+    <Property Name="LastActionId" Type="Int64" />
+    <Property Name="ContactID" Type="Int64" />
+    <Property Name="Closed" Type="Boolean" Nullable="false" />
+    <Property Name="IndemnityID" Type="Int64" />
+    <Property Name="Sensitive" Type="Boolean" Nullable="false" />
+    <Property Name="Checklist" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifyingAction" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LastModifiedReason" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastKeyNatureOfAdviceId" Type="Int64" />
+    <Property Name="PolicyNumberID" Type="Int64" />
+    <Property Name="ProActiveCallBackCreated" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Actions" Relationship="AdviceModel.JobAction" FromRole="Job" ToRole="Action" />
+  </EntityType>
+  <EntityContainer Name="AdviceEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Actions" EntityType="Self.Action" />
+    <EntitySet Name="Jobs" EntityType="Self.Job" />
+    <AssociationSet Name="JobAction" Association="AdviceModel.JobAction">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="Action" EntitySet="Actions" />
+    </AssociationSet>
+    <EntitySet Name="ActionTypes" EntityType="AdviceModel.ActionType" />
+    <AssociationSet Name="FK_Action_ActionType" Association="AdviceModel.FK_Action_ActionType">
+      <End Role="ActionType" EntitySet="ActionTypes" />
+      <End Role="Action" EntitySet="Actions" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="JobAction">
+    <End Type="AdviceModel.Job" Role="Job" Multiplicity="1" />
+    <End Type="AdviceModel.Action" Role="Action" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="JobID" />
+      </Principal>
+      <Dependent Role="Action">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ActionType">
+    <Key>
+      <PropertyRef Name="ActionTypeID" />
+    </Key>
+    <Property Name="ActionTypeID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ShowGeneralNotes" Type="Boolean" Nullable="false" />
+    <Property Name="ShowIndemnity" Type="Boolean" Nullable="false" />
+    <Property Name="ShowContactInfo" Type="Boolean" Nullable="false" />
+    <Property Name="ShowJobDetails" Type="Boolean" Nullable="false" />
+    <Property Name="ShowAdviceGiven" Type="Boolean" Nullable="false" />
+    <Property Name="ShowInternalNotes" Type="Boolean" Nullable="false" />
+    <Property Name="ShowNatureOfAdvice" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <Property Name="Internal" Type="Boolean" Nullable="false" />
+    <Property Name="UserCanSetLogTimes" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK_Action_ActionType">
+    <End Type="AdviceModel.ActionType" Role="ActionType" Multiplicity="1" />
+    <End Type="AdviceModel.Action" Role="Action" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActionType">
+        <PropertyRef Name="ActionTypeID" />
+      </Principal>
+      <Dependent Role="Action">
+        <PropertyRef Name="ActionTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

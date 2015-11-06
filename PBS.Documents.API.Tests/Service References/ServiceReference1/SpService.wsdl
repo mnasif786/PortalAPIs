@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SpService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://shareuatapp01:2014/SpService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://shareuatapp01:2014/SpService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://shareuatapp01:2014/SpService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Peninsula.SharePoint.Common.Library" />
+      <xsd:import schemaLocation="http://shareuatapp01:2014/SpService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISpService_GetDocuments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocuments" />
+  </wsdl:message>
+  <wsdl:message name="ISpService_GetDocuments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpService_GetDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocument" />
+  </wsdl:message>
+  <wsdl:message name="ISpService_GetDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpService_GetAllInstallationReceipts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllInstallationReceipts" />
+  </wsdl:message>
+  <wsdl:message name="ISpService_GetAllInstallationReceipts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllInstallationReceiptsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpService_GetInstallationReceiptById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInstallationReceiptById" />
+  </wsdl:message>
+  <wsdl:message name="ISpService_GetInstallationReceiptById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInstallationReceiptByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpService_UpdateInstallationReceipt_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateInstallationReceipt" />
+  </wsdl:message>
+  <wsdl:message name="ISpService_UpdateInstallationReceipt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateInstallationReceiptResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpService_GetStationaryLocations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStationaryLocations" />
+  </wsdl:message>
+  <wsdl:message name="ISpService_GetStationaryLocations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStationaryLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpService_GetStationaryDocuments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStationaryDocuments" />
+  </wsdl:message>
+  <wsdl:message name="ISpService_GetStationaryDocuments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStationaryDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISpService_GetStationaryDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStationaryDocument" />
+  </wsdl:message>
+  <wsdl:message name="ISpService_GetStationaryDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStationaryDocumentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISpService">
+    <wsdl:operation name="GetDocuments">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpService/GetDocuments" message="tns:ISpService_GetDocuments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpService/GetDocumentsResponse" message="tns:ISpService_GetDocuments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpService/GetDocument" message="tns:ISpService_GetDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpService/GetDocumentResponse" message="tns:ISpService_GetDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllInstallationReceipts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpService/GetAllInstallationReceipts" message="tns:ISpService_GetAllInstallationReceipts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpService/GetAllInstallationReceiptsResponse" message="tns:ISpService_GetAllInstallationReceipts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInstallationReceiptById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpService/GetInstallationReceiptById" message="tns:ISpService_GetInstallationReceiptById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpService/GetInstallationReceiptByIdResponse" message="tns:ISpService_GetInstallationReceiptById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInstallationReceipt">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpService/UpdateInstallationReceipt" message="tns:ISpService_UpdateInstallationReceipt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpService/UpdateInstallationReceiptResponse" message="tns:ISpService_UpdateInstallationReceipt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStationaryLocations">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpService/GetStationaryLocations" message="tns:ISpService_GetStationaryLocations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpService/GetStationaryLocationsResponse" message="tns:ISpService_GetStationaryLocations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStationaryDocuments">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpService/GetStationaryDocuments" message="tns:ISpService_GetStationaryDocuments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpService/GetStationaryDocumentsResponse" message="tns:ISpService_GetStationaryDocuments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStationaryDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISpService/GetStationaryDocument" message="tns:ISpService_GetStationaryDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISpService/GetStationaryDocumentResponse" message="tns:ISpService_GetStationaryDocument_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISpService" type="tns:ISpService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDocuments">
+      <soap:operation soapAction="http://tempuri.org/ISpService/GetDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocument">
+      <soap:operation soapAction="http://tempuri.org/ISpService/GetDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllInstallationReceipts">
+      <soap:operation soapAction="http://tempuri.org/ISpService/GetAllInstallationReceipts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstallationReceiptById">
+      <soap:operation soapAction="http://tempuri.org/ISpService/GetInstallationReceiptById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInstallationReceipt">
+      <soap:operation soapAction="http://tempuri.org/ISpService/UpdateInstallationReceipt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStationaryLocations">
+      <soap:operation soapAction="http://tempuri.org/ISpService/GetStationaryLocations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStationaryDocuments">
+      <soap:operation soapAction="http://tempuri.org/ISpService/GetStationaryDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStationaryDocument">
+      <soap:operation soapAction="http://tempuri.org/ISpService/GetStationaryDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SpService">
+    <wsdl:port name="BasicHttpBinding_ISpService" binding="tns:BasicHttpBinding_ISpService">
+      <soap:address location="http://shareuatapp01:2014/SpService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

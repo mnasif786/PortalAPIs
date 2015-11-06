@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7454c430-821b-4de3-98f3-20e3689de8ec" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://shareuatapp01:2014/SpService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SpService.xsd" MetadataType="Schema" ID="7150b910-8c0c-42ff-9cce-7d079ec109ad" SourceId="1" SourceUrl="http://shareuatapp01:2014/SpService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SpService1.xsd" MetadataType="Schema" ID="d43ec8a1-5e5a-42ee-b8cc-159dcee2ad1c" SourceId="1" SourceUrl="http://shareuatapp01:2014/SpService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SpService2.xsd" MetadataType="Schema" ID="9551801c-718d-4597-94c3-b62228efce66" SourceId="1" SourceUrl="http://shareuatapp01:2014/SpService.svc?xsd=xsd3" />
+    <MetadataFile FileName="SpService.disco" MetadataType="Disco" ID="c5d7ea9d-6213-4a9e-bafc-69f70b0f8247" SourceId="1" SourceUrl="http://shareuatapp01:2014/SpService.svc?disco" />
+    <MetadataFile FileName="SpService3.xsd" MetadataType="Schema" ID="839c9889-8e18-48b3-9432-3bd7a26e5038" SourceId="1" SourceUrl="http://shareuatapp01:2014/SpService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SpService.wsdl" MetadataType="Wsdl" ID="bf8ab298-ed1f-4806-933d-20f7fc37f5d6" SourceId="1" SourceUrl="http://shareuatapp01:2014/SpService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
